@@ -1,53 +1,144 @@
-h1 {
-    text-align: center;
-    color: whitesmoke;
-}
-nav {
-    ul {
-        padding: 0;
-        margin: 15px;
-        display: flex;
-        justify-content: space-evenly;
+body{
+    background-image: url(/photos/portada.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    h1 {
+        margin: 10px;
+        text-align: center;
+        color: grey;
+        animation: latido 1.4s linear infinite;
+        
+        @keyframes latido {
+            0% {
+                transform: scale(1);
+            }
+            17% {
+                transform: scale(1.2);
+            }
+            34% {
+                transform: scale(1.1);
+            }
+            51% {
+                transform: scale(1.3);
+            }
+            68%{
+                transform: scale(1.1);
+            }
+            85%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    }
+    nav {
+        justify-content: center;
         align-items: center;
-        li {
-            display: inline-block;
-            a {
-                color: whitesmoke;
-                font-size: 12px;
-                text-decoration: none;
-                &:hover {
-                    color: grey;
-                    scale: 1.1;
-                }
-            }
-        }
-    }
-}
-@media (min-width: 500px) {
-    nav {
         ul {
-            margin: 12px;
+            padding: 0;
+            margin: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
             li {
+                display: inline-block;
                 a {
-                   font-size: 20px; 
+                    color: grey;
+                    font-size: 12px;
+                    text-decoration: none;
+                    &:hover {
+                        color: pink;
+                        scale: 1.2;
+                    }
+                }   
+            }
+        }
+    }
+    .focus-in-contract-bck {
+        color: gray;
+        font-size: 12px;
+        font-family: Arial;
+        -webkit-animation: focus-in-contract-bck 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: focus-in-contract-bck 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                @-webkit-keyframes focus-in-contract-bck {
+                    0% {
+                      letter-spacing: 1em;
+                      -webkit-transform: translateZ(300px);
+                              transform: translateZ(300px);
+                      -webkit-filter: blur(12px);
+                              filter: blur(12px);
+                      opacity: 0;
+                    }
+                    100% {
+                      -webkit-transform: translateZ(12px);
+                              transform: translateZ(12px);
+                      -webkit-filter: blur(0);
+                              filter: blur(0);
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes focus-in-contract-bck {
+                    0% {
+                      letter-spacing: 1em;
+                      -webkit-transform: translateZ(300px);
+                              transform: translateZ(300px);
+                      -webkit-filter: blur(12px);
+                              filter: blur(12px);
+                      opacity: 0;
+                    }
+                    100% {
+                      -webkit-transform: translateZ(12px);
+                              transform: translateZ(12px);
+                      -webkit-filter: blur(0);
+                              filter: blur(0);
+                      opacity: 1;
+                    }
+                  }
+    }
+
+
+    @media (min-width: 500px) {
+        h1 {
+            margin: 7px;
+        }
+        nav {
+            ul {
+                li {
+                    a {
+                        font-size: 15px;
+                    }
                 }
             }
         }
     }
-}
-@media (min-width: 720px) {
-    nav {
-        ul {
+    @media (min-width: 720px) {
+        h1 {
+            margin: 25px;
+        }
+        nav {
             display: flex;
             flex-direction: column;
-            flex-wrap: nowrap;
-            align-content: center;
-            li {
-
-                flex-grow: 1;            
-                a {
-                    display: block;
-                    text-align: center;
+            justify-content: space-around;
+            ul {
+                display: flex;
+                flex-direction: column;
+                li {
+                    width: auto;
+                    height: 100px;
+                }
+            }
+        }
+    }
+    @media (min-width: 1020px) {
+        nav {
+            ul {
+                li {
+                    a {
+                        font-size: 25px;
+                    }
                 }
             }
         }

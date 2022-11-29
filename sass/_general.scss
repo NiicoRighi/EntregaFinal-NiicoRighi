@@ -11,38 +11,42 @@ html {
         font-size: 1.2rem;
         min-height: 100%;
         header {
-            background-color: aquamarine;
             grid-area: header;
+            justify-content: center;
+            align-items: center;
         }
         nav {
-            background-color: yellowgreen;
+            background-color: rgb(255, 255, 255, 0.5);
             grid-area: navbar;
         }
+        }
         main {
-            background-color: pink;
             grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         footer {
+            font-size: 10px;
             background-color: beige;
             grid-area: footer;
         }
     }
     .container {
         display: grid;
-        gap: 10px;
+        gap: 5px;
         grid-template: 
         "header" 50px
         "navbar" 50px
         "main"   auto
-        "footer" 50px;
+        "footer" 170px;
     }
     @media (min-width: 720px) {
         .container {
             grid-template:
              "header header" 100px
              "navbar main"   auto
-             "footer footer" 100px /
+             "footer footer" 170px /
               25%    auto;
         }
     }
-}

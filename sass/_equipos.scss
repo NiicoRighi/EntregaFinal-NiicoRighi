@@ -1,0 +1,54 @@
+@mixin camara {
+    margin: 5 auto;
+    text-align: center;
+    font-family: arial;
+    font-size: 12px;
+    color: gray;
+  }
+
+.txt1 {
+    grid-area: txt1;
+    @include camara;
+}
+
+.nikon {
+    grid-area: titulo;
+    @include camara;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.txt2 {
+    grid-area: txt2;
+    @include camara;
+}
+.equipaminto__contenedor {
+    margin: 5px;
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "txt1"         
+    "titulo"
+    "txt2";
+}       
+
+@media (min-width: 720px) {
+    .txt1 {
+        font-size: 15px;
+    }
+    .txt2 {
+        font-size: 15px;
+    }
+    .titulo {
+        font-size: 25px;
+    }
+    .equipaminto__contenedor {
+        margin: 5px;
+        display: grid;
+        gap: 10px;
+        grid-template: 
+        "txt1 . ."         
+        "txt1 titulo txt2"
+        " . .txt2";
+    }
+}
